@@ -1,0 +1,19 @@
+<!-- todo/templates/todo/todo_list.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <ul>
+        {% for todo in todos %}
+            <li>{{ todo.title }} - {% if todo.completed %} 完了 {% else %} 未完了 {% endif %}</li>
+        {% empty %}
+            <li>タスクはありません。</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
